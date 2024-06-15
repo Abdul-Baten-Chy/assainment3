@@ -18,7 +18,7 @@ const createBookingIntoDB = async (payload: Tbooking, userEmail: string) => {
   return newBooking;
 };
 const getAllBooking = async (carId: string) => {
-  return await Booking.findById(carId);
+  return await Booking.find({ car: carId });
 };
 const getMyBookingFromDb = async (userEmail: string) => {
   const user = await User.findOne({ email: userEmail });

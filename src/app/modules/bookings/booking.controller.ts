@@ -24,9 +24,9 @@ const createBooking = catchAsyncAwait(async (req: Request, res: Response) => {
 });
 const getAllBookings = async (req: Request, res: Response) => {
   const carId = req.query.carId;
-  console.log(carId);
+  console.log(carId, 'pepepe');
 
-  const result = await bookingService.getAllBooking(carId as string);
+  const result = await bookingService.getAllBooking(carId);
   return sendResponse(res, {
     success: true,
     statusCode: 200,
